@@ -1,4 +1,5 @@
 import { Navbar } from "./components/navbar";
+import { Hero } from "./components/hero";
 
 // import React from 'react'
 
@@ -6,6 +7,7 @@ import { Navbar } from "./components/navbar";
   return (
     <div>
         <Navbar />
+        <Hero />
     </div>
   )
 }
