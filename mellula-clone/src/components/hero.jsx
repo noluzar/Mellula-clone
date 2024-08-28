@@ -3,7 +3,7 @@
 
 export const Hero = () => {
   return (
-    <div className="top-0 overflow-x-hidden absolute bg-cover w-full h-full z-0 flex justify-center items-center flex-col" style={{backgroundImage:`url('./22.jpg')`,
+    <div className="top-0 overflow-x-hidden relative bg-cover w-full h-full z-0 flex justify-center items-center flex-col" style={{backgroundImage:`url('./22.jpg')`,
         height: '100vh',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
