@@ -10,7 +10,7 @@ export const Brands = () => {
         <img src="./555.png" alt="" className="p-[17px]"/>
        </div>
        <div className="mx-[82px] p-[17px] ">
-        <hr className="text-[#DDDDDD] w-[786px] h-[1px]"></hr>
+        <hr className="text-[#DDDDDD] w-[400px] sm:w-[600px] lg:w-[786px] h-[1px]"></hr>
         </div>
         
     </div>
