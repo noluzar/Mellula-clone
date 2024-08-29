@@ -4,12 +4,16 @@ export const TwoPics = () => {
   return (
     <div className="flex md:flex-row flex-col ">
 
-      <div className="w-full h-[60vh]">
-         <img className="w-full h-full md:hover:scale-110 transition-transform" src="./27.jpg" alt="" />
+      <div className="w-full h-[80vh]">
+        <a href="/shop">
+         <img className="w-full h-full transition-transform" src="./27.jpg" alt="" />
+         </a>
       </div>
         
-      <div className="w-full h-[60vh]">
-         <img className="w-full h-full md:hover:scale-110 transition-transform" src="./28.jpg" alt="" />
+      <div className="w-full h-[80vh]">
+      <a href="/shop">
+         <img className="w-full h-full  transition-transform" src="./28.jpg" alt="" />
+         </a>
       </div>
 
     </div>

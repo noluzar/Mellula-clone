@@ -35,7 +35,7 @@ export const Hero = () => {
              initial={{ opacity: 0, y: 25, }}
              whileInView={{ opacity: 1, y: 0, }}
              transition={{ duration: 1, delay: 2.0, }} 
-             className="bg-[#0DF8AD]   px-[34px] py-[21px] rounded-full text-[18px] text-white p-[17px] font-semibold">VISIT OUR SHOP</motion.button>
+             className="bg-[#0DF8AD]   px-[34px] py-[21px] hover:bg-opacity-70 rounded-full text-[18px] text-white p-[17px] font-semibold">VISIT OUR SHOP</motion.button>
     </div>
   )
 }

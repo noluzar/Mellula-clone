@@ -1,4 +1,4 @@
-// import React from 'react'
+import { motion } from "framer-motion";
 
 export const Shop = () => {
     const shoes = [
@@ -17,6 +17,7 @@ export const Shop = () => {
         },
 
         { 
+            id: 3,
             name: 'Fille',
             price: 45.00,
             url: './shoes/3.jpg'
@@ -26,157 +27,138 @@ export const Shop = () => {
             id: 4,
             name: 'Mint',
             price: 45.00,
-            url: './shoes/5.jpg'
-        },
-
-        { 
-            name: 'Mikka',
-            price: 45.00,
             url: './shoes/4.jpg'
         },
 
         { 
+            id: 5,
+            name: 'Mikka',
+            price: 45.00,
+            url: './shoes/5.jpg'
+        },
+
+        { 
+            id: 6,
             name: 'Purple',
             price: 45.00,
             url: './shoes/6.jpg'
         },
 
         { 
+            id: 7,
             name: 'Patent Mint',
             price: 45.00,
             url: './shoes/7.jpg'
         },
 
         { 
+            id: 8,
             name: 'Gold',
             price: 45.00,
             url: './shoes/8.jpg'
         },
 
         { 
+            id: 9,
             name: 'Peoni',
             price: 45.00,
-            url: './shoes/8.jpg'
+            url: './shoes/9.jpg'
         },
 
         { 
-            name: 'Bue',
+            id: 10,
+            name: 'Birk',
             price: 45.00,
-            url: './shoes/1.jpg'
+            url: './shoes/10.jpg'
         },
-
         { 
-            name: 'Bue',
+            id: 11,
+            name: 'Vigga',
             price: 45.00,
-            url: './shoes/1.jpg'
+            url: './shoes/11.jpg'
         },
-
         { 
-            name: 'Bue',
+            id: 12,
+            name: 'Ville',
             price: 45.00,
-            url: './shoes/1.jpg'
+            url: './shoes/12.jpg'
         },
-
         { 
-            name: 'Bue',
-            price: 45.00,
-            url: './shoes/1.jpg'
+            id: 13,
+            name: 'Coral No-Tie Laces',
+            price: 10.00,
+            url: './shoes/13.jpg'
         },
-
         { 
-            name: 'Bue',
-            price: 45.00,
-            url: './shoes/1.jpg'
+            id: 14,
+            name: 'Turqouis No-Tie Laces',
+            price: 10.00,
+            url: './shoes/14.jpg'
         },
-
         { 
-            name: 'Bue',
-            price: 45.00,
-            url: './shoes/1.jpg'
+            id: 15,
+            name: 'Royal Blue No-Lie Laces',
+            price: 10.00,
+            url: './shoes/15.jpg'
         },
-
         { 
-            name: 'Bue',
-            price: 45.00,
-            url: './shoes/1.jpg'
+            id: 16,
+            name: 'Yellow No-Tie Laces',
+            price: 10.00,
+            url: './shoes/16.jpg'
         },
-
         { 
-            name: 'Bue',
-            price: 45.00,
-            url: './shoes/1.jpg'
+            id: 17,
+            name: 'White No-Tie Laces',
+            price: 10.00,
+            url: './shoes/17.jpg'
+        },
+        { 
+            id: 18,
+            name: 'Dark Blue No-Tie Laces',
+            price: 10.00,
+            url: './shoes/18.jpg'
         }
-    ]
-  return (
-    <div>
-        <div className="top-0 overflow-x-hidden relative bg-cover w-full h-full z-0 flex justify-center items-center flex-col" style={{
-      backgroundImage: `url('./22.jpg')`,
-      height: '50vh',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundSize: ""
 
-    }}>
-        <h1 className="text-7xl text-white font-semibold">SHOP</h1>
-    </div>
-        <div className="p-[100px]">
-            <div>
-            <ul className="flex justify-center gap-11">
-                <li><a href="">All</a></li>
-                <li><a href="">Kids shoes</a></li>
-                <li><a href="">No-tie Laces</a></li>
-            </ul>
+        // Repeat or add more shoes if needed
+    ];
+
+    return (
+        <div>
+            <div className="top-0 overflow-x-hidden relative bg-cover w-full h-full z-0 flex justify-center items-center" style={{
+                backgroundImage: `url('./headershop.jpg')`,
+                height: '50vh',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: "cover"  // or "contain"
+            }}>
+                <motion.h1
+                initial={{ opacity: 0, y: 25, }}
+                whileInView={{ opacity: 1, y: 0, }}
+                transition={{ duration: 1, delay: 1.8, }} className="text-7xl text-white font-semibold">SHOP</motion.h1>
             </div>
-             <div className="grid grid-cols-3 "> 
-                 {shoes.map((shoe) => {
+            <div className="p-[100px]">
+                <div>
+                    <ul className="flex justify-center gap-11">
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Kids shoes</a></li>
+                        <li><a href="#">No-tie Laces</a></li>
+                    </ul>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3"> 
+                    {shoes.map((shoe) => (
+                        <div key={shoe.id} className="relative w-auto h-auto">
+                            <img src={shoe.url} alt={shoe.name} className="w-full h-auto" />
+                            <div className="flex md:absolute inset-x-0 bottom-0 flex flex-col justify-center items-center text-black p-2">
+                                <h1>{shoe.name}</h1>
+                                <p className="text-gray-400">R {shoe.price}.00</p>
 
-                    <div className="w-auto h-auto"  >
-                        <img src={shoe.url} alt="" className="w-[100px] h-7"/>
-                        <h1>{shoe.name}</h1>
-                        <p>{shoe.price}</p>
-                    </div>       
-                    
-                })}
-
-            {/* <div>
-                <img src="./shoes/1.jpg"></img>
-                <h2>Blue</h2>
-                <p>R45,00</p>
+                            </div>
+                        </div>
+                         
+                    ))}
+                    </div>
+                </div>
             </div>
-            <div>
-                <img src="./shoes/1.jpg"></img>
-                <h2>Blue</h2>
-                <p>R45,00</p>
-            </div>
-            <div>
-                <img src="./shoes/1.jpg"></img>
-                <h2>Blue</h2>
-                <p>R45,00</p>
-            </div>
-            <div>
-                <img src="./shoes/1.jpg"></img>
-                <h2>Blue</h2>
-                <p>R45,00</p>
-            </div>
-            <div>
-                <img src="./shoes/1.jpg"></img>
-                <h2>Blue</h2>
-                <p>R45,00</p>
-            </div>  */}
-        </div>
-        </div>
-     </div>
-  )
-}
-
-
-// const Card = ({url, name, price}) => {
-//     return(
-//         <div>
-//             <img src={url}></img>
-//             <h2>{name}</h2>
-//             <p>{price}</p>
-//         </div>
-
-//     )
-// }
+    );
+};

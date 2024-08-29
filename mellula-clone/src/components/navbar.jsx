@@ -1,22 +1,50 @@
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState("home");
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
+
+    const handleScroll = () => {
+        setIsScrolled(window.scrollY > 50);
+    
+        const sections = document.querySelectorAll("section");
+        let currentSection = "";
+    
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+    
+          if (
+            window.scrollY >= sectionTop - 50 &&
+            window.scrollY < sectionTop + sectionHeight - 50
+          ) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+    
+        setActiveSection(currentSection);
+      };
+
+      useEffect(() =>{
+        window.addEventListener("scroll", handleScroll);
+        return() => window.removeEventListener("scroll", handleScroll);
+      }, [])
     return (
         <motion.div 
         initial={{ opacity: 0, y: 25, }}
         whileInView={{ opacity: 1, y: 0, }}
         transition={{ duration: 1, delay: 1.2, }} 
-        className="text-white top-0 left-0 bg-[#002D5A] z-10 fixed w-full md:bg-transparent">
-            <div className="w-full py-[20px] h-[78px] px-[12px] md:pt-[40px] md:px-[50px] items-center">
+        className={`text-white top-0 left-0 bg-[#002D5A] z-10 fixed w-full ${isScrolled ? "md:bg-[#002D5A]" : "md:bg-transparent"}`}>
+            <div className="w-full py-[20px] h-[78px] px-[12px] md:pt-[20px] md:pb-[20px] md:px-[50px] items-center">
                 <nav className="flex justify-between items-center">
                     <div>
                         <a href="/">
@@ -24,8 +52,8 @@ export const Navbar = () => {
                         </a>
                     </div>
                     <ul className="list-none flex md:space-x-4 text-[15px] font-semibold">
-                        <li><a href="/shop" className="hidden md:flex">SHOP</a></li>
-                        <li><a href="#" className="hidden md:flex">ABOUT</a></li>
+                        <li><a href="/shop" className="hidden md:flex hover:text-gray-300">SHOP</a></li>
+                        <li><a href="/about" className="hidden md:flex hover:text-gray-300">ABOUT</a></li>
                         <div className="flex items-center relative">
                             <MdOutlineShoppingCart className="md:h-[35px] md:w-[35px] w-[30px] h-[30px] md:hidden" />
                             <div className="absolute bg-[#fbb498] top-[-8px] right-[-8px] w-[28px] h-[28px] rounded-full md:hidden flex items-center justify-center">
@@ -58,7 +86,7 @@ export const Navbar = () => {
                                 <a href="/shop" className="text-black pb-[13px] hover:text-gray-600">
                                     SHOP
                                 </a>
-                                <a href="/" className="text-black hover:text-gray-600">
+                                <a href="/about" className="text-black hover:text-gray-600">
                                     ABOUT
                                 </a>
                             </div>

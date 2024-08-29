@@ -9,19 +9,19 @@ export const Subscribe = () => {
                       <h2>Follow us on Instagram</h2>
                       <a href="" className="underline">@melula_copenhagen</a>
                   </div>
-                  <div className="flex p-[17px] gap-2">
-                      <img className="w-[225px] h-[225px]" src="./image-asset.jpeg" alt="" />
-                      <img className="w-[225px] h-[225px]" src="./image-asset (1).jpeg" alt="" />
+                  <div className="flex flex-col lg:flex-row p-[17px] gap-2">
+                      <img className="w-auto h-auto lg:max-w-[360px] lg:max-h-[360px]" src="./image-asset.jpeg" alt="" />
+                      <img className="w-auto h-auto lg:max-w-[360px] lg:max-h-[360px]" src="./image-asset (1).jpeg" alt="" />
                   </div>
               </div>
 
             <div className="px-[17px] py-[34px]">
-            <div className="mx-[32px] flex flex-col items-center">
+            <div className="md:mx-[32px] flex flex-col items-center">
                 <h2 className="text-3xl mb-[17px]">Subscribe</h2>
                 <p className="my-[17px] text-base">Sign up with your email address to receive news and updates.</p>
             </div>
             <div className="flex justify-center flex-col">
-                <div className="flex justify-center mb-3 items-center gap-3">
+                <div className="flex justify-center mb-3 flex-col sm:flex-row items-center gap-3">
                 <input className="border p-[15px] w-[250px]" placeholder="E-mailaddress" type="email"/>
                 <button className="border py-[15px] bg-[#1ff4bf] text-white text-base px-[38px]">SIGN UP</button>
                 </div>
